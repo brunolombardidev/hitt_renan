@@ -1,0 +1,2128 @@
+/* Estilos dinâmicos baseados na customização */
+:root {
+    --font-family: <?php echo isset($customizacao['font_family']) ? $customizacao['font_family'] : 'Poppins'; ?>, sans-serif;
+    --font-size: <?php echo isset($customizacao['font_size']) ? $customizacao['font_size'] : '16px'; ?>;
+    --font-weight: <?php echo isset($customizacao['font_weight']) ? $customizacao['font_weight'] : '400'; ?>;
+    --background-color: <?php echo isset($customizacao['background_color']) ? $customizacao['background_color'] : '#f8f9fa'; ?>;
+}
+
+body {
+    font-family: var(--font-family);
+    font-size: var(--font-size);
+    font-weight: var(--font-weight);
+    background-color: var(--background-color);
+}
+
+/* Estilos de Tabela */
+.table {
+    width: 100%;
+    margin-bottom: 1rem;
+}
+
+<?php if (isset($customizacao['table_striped']) && $customizacao['table_striped']): ?>
+.table tbody tr:nth-of-type(odd) {
+    background-color: rgba(0, 0, 0, 0.05);
+}
+<?php endif; ?>
+
+<?php if (isset($customizacao['table_hover']) && $customizacao['table_hover']): ?>
+.table tbody tr:hover {
+    background-color: rgba(0, 0, 0, 0.075);
+}
+<?php endif; ?>
+
+<?php if (isset($customizacao['table_responsive']) && $customizacao['table_responsive']): ?>
+@media screen and (max-width: 768px) {
+    .table-responsive-wrapper {
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+    }
+}
+<?php endif; ?>
+
+/* Estilos de Botão */
+.btn {
+    display: inline-block;
+    font-weight: 400;
+    text-align: center;
+    vertical-align: middle;
+    user-select: none;
+    padding: 0.375rem 0.75rem;
+    font-size: 1rem;
+    line-height: 1.5;
+    transition: all 0.15s ease-in-out;
+}
+
+/* Estilos Modernos */
+<?php if (isset($customizacao['button_style']) && $customizacao['button_style'] == 'modern'): ?>
+.btn {
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    font-weight: 500;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.btn:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+<?php endif; ?>
+
+/* Estilos Clássicos */
+<?php if (isset($customizacao['button_style']) && $customizacao['button_style'] == 'classic'): ?>
+.btn {
+    border-width: 2px;
+    font-weight: normal;
+    text-transform: none;
+}
+
+.btn:hover {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1));
+}
+<?php endif; ?>
+
+/* Estilos Minimalistas */
+<?php if (isset($customizacao['button_style']) && $customizacao['button_style'] == 'minimal'): ?>
+.btn {
+    background: none;
+    border: 1px solid;
+    box-shadow: none;
+    font-weight: normal;
+}
+
+.btn:hover {
+    background: rgba(0, 0, 0, 0.05);
+}
+<?php endif; ?>
+
+/* Formatos de Botão */
+<?php if (isset($customizacao['button_radius'])): ?>
+<?php if ($customizacao['button_radius'] == 'square'): ?>
+.btn {
+    border-radius: 0;
+}
+<?php elseif ($customizacao['button_radius'] == 'rounded'): ?>
+.btn {
+    border-radius: 6px;
+}
+<?php elseif ($customizacao['button_radius'] == 'pill'): ?>
+.btn {
+    border-radius: 50px;
+}
+<?php endif; ?>
+<?php endif; ?>
+
+/* Estilos globais modernos */
+body {
+  font-family: "Poppins", sans-serif;
+  background-color: #f8f9fa;
+  color: #2c3e50;
+}
+
+/* Navbar moderna */
+.navbar {
+  background: linear-gradient(135deg, #6366f1 0%, #4f46e5 100%);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  padding: 1rem 2rem;
+}
+
+.navbar-brand {
+  font-weight: 700;
+  font-size: 1.5rem;
+  color: #fff;
+}
+
+/* Container principal */
+.container {
+  background-color: #ffffff;
+  border-radius: 15px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+  padding: 2rem;
+  margin-top: 2rem;
+}
+
+/* Cards modernos */
+.card {
+  border: none;
+  border-radius: 12px;
+  box-shadow: 0 4px 6px rgba(99, 102, 241, 0.1);
+  transition: transform 0.2s, box-shadow 0.2s;
+  background: #ffffff;
+  margin-bottom: 1.5rem;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 12px rgba(99, 102, 241, 0.15);
+}
+
+.card-header {
+  background: linear-gradient(135deg, #6366f1 0%, #4f46e5 100%);
+  color: white;
+  border-radius: 12px 12px 0 0 !important;
+  padding: 1rem 1.5rem;
+  font-weight: 600;
+}
+
+.card-body {
+  padding: 1.5rem;
+}
+
+/* Botões modernos */
+.btn {
+  padding: 0.5rem 1.5rem;
+  font-weight: 500;
+  border: none;
+  transition: all 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.btn i {
+  font-size: 1rem;
+}
+
+.btn-primary {
+  background-color: #0d6efd;
+  color: white;
+}
+
+.btn-primary:hover {
+  background-color: #0b5ed7;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.btn-danger {
+  background-color: #dc3545;
+  color: white;
+}
+
+.btn-danger:hover {
+  background-color: #bb2d3b;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.btn-success {
+  background-color: #198754;
+  color: white;
+}
+
+.btn-success:hover {
+  background-color: #157347;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.btn-info {
+  background-color: #0dcaf0;
+  color: white;
+}
+
+.btn-info:hover {
+  background-color: #31d2f2;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.btn-secondary {
+  background-color: #6c757d;
+  color: white;
+}
+
+.btn-secondary:hover {
+  background-color: #5c636a;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Botões da seção de agendamentos */
+.tab-pane#agendamentos .btn {
+  padding: 0.375rem 0.75rem;
+  font-size: 0.875rem;
+  margin: 0.125rem;
+}
+
+.tab-pane#agendamentos .btn i {
+  font-size: 0.875rem;
+  margin-right: 0.25rem;
+}
+
+/* Tabelas modernas */
+.table {
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+}
+
+.table thead th {
+  background: #f8f9fa;
+  border-bottom: 2px solid #e9ecef;
+  color: #4f46e5;
+  font-weight: 600;
+  text-transform: uppercase;
+  font-size: 0.875rem;
+  padding: 1rem;
+}
+
+.table tbody td {
+  padding: 1rem;
+  vertical-align: middle;
+  border-bottom: 1px solid #f1f5f9;
+}
+
+/* Formulários modernos */
+.form-control {
+  border-radius: 8px;
+  border: 2px solid #e9ecef;
+  padding: 0.75rem 1rem;
+  transition: all 0.3s ease;
+  height: 50px;
+}
+
+.form-control:focus {
+  border-color: #6366f1;
+  box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.1);
+}
+
+.form-label {
+  font-weight: 600;
+  color: #4f46e5;
+  margin-bottom: 0.5rem;
+}
+
+/* Status de agendamento */
+.horario-disponivel {
+  background-color: #34d399;
+  color: white !important;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  font-weight: 500;
+}
+
+.horario-ocupado {
+  background-color: #f87171;
+  color: white !important;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  font-weight: 500;
+}
+
+/* Alertas modernos */
+.alert {
+  border: none;
+  border-radius: 12px;
+  padding: 1rem 1.5rem;
+  margin-bottom: 1.5rem;
+  font-weight: 500;
+}
+
+.alert-success {
+  background-color: #34d399;
+  color: #064e3b;
+}
+
+.alert-danger {
+  background-color: #f87171;
+  color: #7f1d1d;
+}
+
+.alert-warning {
+  background-color: #fbbf24;
+  color: #78350f;
+}
+
+/* Footer moderno */
+footer {
+  padding: 2rem 0;
+  margin-top: 3rem;
+}
+
+footer p {
+  color: #6b7280;
+  font-weight: 500;
+  margin: 0;
+}
+
+/* Sidebar */
+.sidebar {
+  position: fixed;
+  left: 0;
+  top: 0;
+  height: 100vh;
+  width: 250px;
+  background-color: #4e73df;
+  color: #fff;
+  transition: all 0.3s ease;
+  overflow-x: hidden;
+  z-index: 1000;
+}
+
+.sidebar.collapsed {
+  width: 80px;
+}
+
+.sidebar .nav-item {
+  margin: 10px 0;
+  width: 100%;
+  text-align: left;
+}
+
+.sidebar .nav-link {
+  color: #fff;
+  display: flex;
+  align-items: center;
+}
+
+.sidebar .nav-link i {
+  margin-right: 10px;
+}
+
+.sidebar .nav-link-collapsed i {
+  margin-right: 0;
+}
+
+.sidebar .nav-link .link-text {
+  display: inline-block;
+  transition: opacity 0.3s;
+}
+
+.sidebar.collapsed .nav-link .link-text {
+  opacity: 0;
+}
+
+
+
+.user-info {
+  margin-top: auto;
+  text-align: center;
+}
+
+.content {
+  margin-left: 250px;
+  padding: 15px;
+  transition: margin-left 0.3s;
+}
+
+.collapsed-content {
+  margin-left: 80px;
+}
+
+.sidebar .logo {
+  width: 100%;
+  max-width: 200px;
+  height: auto;
+  margin: 20px auto;
+  display: block;
+  transition: all 0.3s ease;
+}
+
+.sidebar.collapsed .logo {
+  display: none;
+}
+
+.collapse-text {
+  transition: opacity 0.3s ease;
+}
+
+.sidebar.collapsed .collapse-text {
+  display: none;
+}
+
+.collapse-icon {
+  display: none;
+  transition: all 0.3s ease;
+}
+
+.sidebar.collapsed .collapse-icon {
+  display: inline-block;
+}
+
+/* Ajuste para prevenir barra de rolagem */
+.sidebar {
+  position: fixed;
+  left: 0;
+  top: 0;
+  height: 100vh;
+  width: 250px;
+  background-color: #4e73df;
+  color: #fff;
+  transition: all 0.3s ease;
+  overflow-x: hidden;
+  z-index: 1000;
+}
+
+.kanban-board {
+  display: flex;
+  gap: 10px;
+}
+
+.kanban-column {
+  flex: 1;
+  background: #f4f4f4;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 10px;
+}
+
+.kanban-list {
+  list-style: none;
+  padding: 0;
+}
+
+.kanban-item {
+  background: white;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin: 5px 0;
+  padding: 10px;
+  cursor: grab;
+}
+
+/* Estilização para textos dentro dos itens */
+.kanban-item h4 {
+  font-size: 1.1rem;
+  margin: 0 0 5px 0;
+  color: #333;
+}
+
+.kanban-item p {
+  font-size: 0.9rem;
+  margin: 0;
+  color: #666;
+}
+
+/* Scroll customizado */
+.kanban-column::-webkit-scrollbar {
+  width: 8px;
+}
+
+.kanban-column::-webkit-scrollbar-thumb {
+  background-color: #888;
+  border-radius: 4px;
+}
+
+.kanban-column::-webkit-scrollbar-thumb:hover {
+  background-color: #555;
+}
+
+.nav-tabs {
+  border-bottom: 1px solid #ddd;
+}
+
+.nav-tabs .nav-item {
+  margin-bottom: -1px;
+}
+
+.nav-tabs .nav-link {
+  border: 1px solid transparent;
+  border-radius: 0;
+  padding: 0.5rem 1rem;
+}
+
+.nav-tabs .nav-link.active {
+  border-color: #ddd #ddd #fff;
+}
+
+/* Adicione uma cor de fundo diferente para cada coluna */
+#column-aguardando {
+  background-color: #e1f5fe;
+}
+
+#column-iniciado {
+  background-color: #fff3e0;
+}
+
+#column-cancelado {
+  background-color: #ffebee;
+}
+
+#column-finalizado {
+  background-color: #e8f5e9;
+}
+
+/* Estilos específicos para EvolutionAPI */
+#evolutionapi .evolutionapi-sub-tabs .nav-link {
+  background-color: #f1f1f1;
+}
+
+#evolutionapi .evolutionapi-sub-tabs .nav-link.active {
+  background-color: #0d6efd;
+  border-color: #ccc #ccc #fff;
+}
+
+.evolutionapi-input-group {
+  margin-bottom: 10px;
+}
+
+.evolutionapi-input-group label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+.evolutionapi-input-group input,
+.evolutionapi-input-group select,
+.evolutionapi-input-group textarea {
+  width: 100%;
+  padding: 8px;
+  box-sizing: border-box;
+}
+
+.evolutionapi-loading {
+  display: none;
+  margin-top: 10px;
+}
+
+.success {
+  color: green;
+}
+
+.error {
+  color: red;
+}
+
+.card-container {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.card {
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 10px;
+  margin: 10px;
+  width: calc(33.333% - 20px);
+  box-sizing: border-box;
+  background-color: #f9f9f9;
+}
+
+.card h3 {
+  margin: 0;
+  font-size: 1.2em;
+}
+
+.card p {
+  margin: 5px 0;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
+}
+
+table,
+th,
+td {
+  border: 1px solid #ccc;
+}
+
+th,
+td {
+  padding: 10px;
+  text-align: left;
+}
+
+.kanban-board {
+  display: flex;
+  justify-content: space-around;
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.kanban-column {
+  background-color: #ffffff;
+  padding: 15px;
+  border-radius: 8px;
+  width: 23%;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  max-height: 600px;
+  overflow-y: auto;
+}
+
+.kanban-column h3 {
+  font-size: 1.2rem;
+  margin-bottom: 15px;
+  color: #333;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  border-bottom: 2px solid #ececec;
+  padding-bottom: 10px;
+}
+
+.kanban-list {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.kanban-item {
+  background-color: #f5f5f5;
+  padding: 15px;
+  margin-bottom: 15px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s;
+}
+
+.kanban-item:hover {
+  background-color: #e0e0e0;
+}
+
+h1 {
+  text-align: center;
+}
+
+.form-group label {
+  font-weight: 500;
+}
+
+.btn {
+  font-weight: 500;
+}
+
+.alert {
+  font-weight: 500;
+  margin-top: 10px;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+.alert-success {
+  background-color: #4caf50;
+  color: #fff;
+}
+
+.alert-danger {
+  background-color: #f44336;
+  color: #fff;
+}
+
+.alert-warning {
+  background-color: #ffc107;
+  color: #000;
+}
+
+.email-form {
+  margin-top: 20px;
+}
+
+/* Footer */
+footer {
+  color: #000;
+  padding: 20px 0;
+  text-align: center;
+  width: 100%;
+}
+
+/* Estilos globais */
+body {
+  font-family: "Poppins", sans-serif;
+  background-color: #f5f5f5;
+}
+
+.navbar-brand {
+  color: #fff;
+  font-weight: 600;
+}
+
+.navbar-toggler-icon {
+  background-color: #fff;
+}
+
+/* Textos na barra de navegação */
+.navbar-text {
+  color: #fff;
+}
+
+/* Conteúdo principal */
+.container {
+  margin-top: 15px;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Estilos personalizados para os cartões */
+.card {
+  background-color: #fff;
+  border: none;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s;
+}
+
+.card a {
+  color: var(--text-color);
+  font-size: 18px;
+  text-decoration: none;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* Estilos para o cabeçalho */
+.header {
+  background: var(--primary-color);
+  color: #fff;
+  padding: 60px 0;
+}
+
+.header h1 {
+  font-size: 3rem;
+}
+
+.header p {
+  font-size: 1.5rem;
+}
+
+.navbar-nova {
+  color: #fff;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.navbar-nova:hover {
+  color: #ff8e20;
+}
+
+.logo {
+  height: auto;
+  display: block;
+  margin: 0 auto;
+  transition: opacity 0.3s ease-in-out, max-height 0.3s ease-in-out;
+}
+
+/* Estilos para a barra de filtros */
+.filter-bar {
+  background-color: #f8f9fa;
+  padding: 15px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.filter-bar .input-group {
+  gap: 10px;
+}
+
+.filter-bar .form-control,
+.filter-bar .form-select {
+  border: 1px solid #dee2e6;
+  border-radius: 6px;
+}
+
+.filter-bar .btn {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.filter-bar .btn i {
+  font-size: 0.9rem;
+}
+
+/* Estilo para campos de filtro ativos */
+.filter-bar .form-control:focus,
+.filter-bar .form-select:focus {
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 0.2rem rgba(var(--primary-color-rgb), 0.25);
+}
+/* Estilos específicos para a aba de Relatórios */
+#relatorios .small,
+#relatorios .large {
+  background-color: #fff;
+  border: none;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease;
+  margin-bottom: 20px;
+  height: 400px;
+}
+
+#relatorios .card-header {
+  background: linear-gradient(135deg, #4e73df 0%, #224abe 100%);
+  color: #fff;
+  border: none;
+  padding: 1rem;
+  border-radius: 10px 10px 0 0;
+}
+
+#relatorios .card-header h5 {
+  margin: 0;
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+#relatorios .card-body {
+  padding: 1.5rem;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: calc(100% - 56px);
+}
+
+#relatorios .chart-container {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+#relatorios canvas {
+  width: 100% !important;
+  height: 100% !important;
+}
+
+#relatorios .row {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 -10px;
+}
+
+#relatorios .col-md-6 {
+  padding: 0 10px;
+}
+
+/* Filtros e botões */
+#relatorios .filter-bar {
+  background-color: #f8f9fc;
+  padding: 15px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+#relatorios #periodo-filtro {
+  height: 38px;
+  border-radius: 5px;
+  border: 1px solid #d1d3e2;
+  padding: 0.375rem 0.75rem;
+  font-size: 1rem;
+  width: 200px;
+}
+
+#relatorios #exportar-csv {
+  padding: 8px 20px;
+  border-radius: 5px;
+  font-weight: 500;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background-color: #1cc88a;
+  border-color: #1cc88a;
+  color: #fff;
+}
+
+#relatorios #exportar-csv:hover {
+  background-color: #169b6b;
+  border-color: #169b6b;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  #relatorios .col-md-6 {
+    flex: 0 0 100%;
+    max-width: 100%;
+  }
+
+  #relatorios .small,
+  #relatorios .large {
+    height: 350px;
+  }
+}
+
+/* Estilos responsivos para o menu lateral */
+@media (max-width: 768px) {
+  .sidebar {
+    transform: translateX(-100%);
+    position: fixed;
+    z-index: 1050;
+    width: 250px;
+    transition: transform 0.3s ease;
+  }
+
+  .sidebar.mobile-open {
+    transform: translateX(0);
+  }
+
+  .content {
+    margin-left: 0 !important;
+    width: 100%;
+  }
+
+  /* Ajuste para o botão do menu móvel */
+  .mobile-menu-btn {
+    display: block;
+    position: fixed;
+    top: 10px;
+    left: 10px;
+    z-index: 1060;
+    background: var(--primary-color);
+    border: none;
+    color: white;
+    padding: 10px;
+    border-radius: 4px;
+  }
+
+  /* Overlay escuro quando menu está aberto */
+  .mobile-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 1040;
+  }
+
+  .mobile-overlay.active {
+    display: block;
+  }
+
+  /* Ajustes para cards do Kanban */
+  .kanban-board {
+    flex-direction: column;
+  }
+
+  .kanban-column {
+    width: 100%;
+    margin-bottom: 15px;
+  }
+
+  /* Ajustes para tabelas */
+  .table-responsive {
+    margin: 15px 0;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+
+  .table td,
+  .table th {
+    white-space: nowrap;
+    min-width: 100px;
+  }
+
+  /* Ajustes para formulários */
+  .form-group {
+    margin-bottom: 1rem;
+  }
+
+  .form-control {
+    font-size: 16px; /* Evita zoom em iOS */
+    height: 45px;
+  }
+
+  /* Ajustes para modais */
+  .modal-dialog {
+    margin: 10px;
+    width: calc(100% - 20px);
+  }
+
+  /* Ajustes para cards do dashboard */
+  .dashboard-stats .col-md-3 {
+    flex: 0 0 100%;
+    max-width: 100%;
+    margin-bottom: 15px;
+  }
+}
+
+/* Melhorias de acessibilidade */
+:focus {
+  outline: 3px solid var(--primary-color);
+  outline-offset: 2px;
+}
+
+.btn:focus,
+.form-control:focus {
+  box-shadow: 0 0 0 3px rgba(var(--primary-color-rgb), 0.25);
+}
+
+/* Melhorias de contraste */
+.text-muted {
+  color: #666 !important;
+}
+
+.btn {
+  font-weight: 500;
+}
+
+/* Transições suaves */
+.btn,
+.nav-link,
+.form-control {
+  transition: all 0.3s ease;
+}
+
+/* Melhorias para tabelas responsivas */
+@media (max-width: 768px) {
+  .table-responsive {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    margin: 15px -15px;
+    padding: 0 15px;
+    border-radius: 0;
+  }
+
+  .table {
+    min-width: 650px; /* Largura mínima para garantir legibilidade */
+  }
+
+  .table td,
+  .table th {
+    padding: 12px 8px;
+    font-size: 14px;
+    vertical-align: middle;
+  }
+
+  /* Ajuste para botões em tabelas */
+  .table .btn-group {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+  }
+
+  .table .btn {
+    width: 100%;
+    margin: 0;
+    padding: 8px;
+    justify-content: center;
+  }
+
+  /* Indicador de scroll horizontal */
+  .table-responsive::after {
+    content: "";
+    position: absolute;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    width: 5px;
+    background: linear-gradient(to left, rgba(0, 0, 0, 0.1), transparent);
+    pointer-events: none;
+  }
+}
+
+/* Melhorias para botões responsivos */
+@media (max-width: 768px) {
+  .btn {
+    padding: 10px 15px;
+    font-size: 14px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    min-height: 44px; /* Melhor área de toque */
+    touch-action: manipulation;
+  }
+
+  .btn i {
+    font-size: 16px;
+  }
+
+  /* Grupos de botões */
+  .btn-group {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+
+  .btn-group .btn {
+    flex: 1;
+    min-width: 120px;
+  }
+
+  /* Botões de ação principais */
+  .btn-primary,
+  .btn-success,
+  .btn-danger {
+    width: 100%;
+    margin-bottom: 8px;
+  }
+
+  /* Botões de filtro */
+  .filter-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin: 10px 0;
+  }
+
+  .filter-buttons .btn {
+    flex: 1;
+    min-width: 100px;
+  }
+
+  /* Botões em cards */
+  .card .btn {
+    width: 100%;
+    margin-top: 8px;
+  }
+
+  /* Botões em modais */
+  .modal-footer {
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .modal-footer .btn {
+    width: 100%;
+    margin: 0;
+  }
+
+  /* Melhorias de acessibilidade para botões */
+  .btn:active {
+    transform: scale(0.98);
+  }
+
+  .btn:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(var(--primary-color-rgb), 0.25);
+  }
+}
+
+/* Melhorias para formulários em tabelas */
+@media (max-width: 768px) {
+  .table-form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 15px;
+    background: #f8f9fa;
+    border-radius: 8px;
+    margin-bottom: 15px;
+  }
+
+  .table-form .form-group {
+    margin: 0;
+  }
+
+  .table-form .form-control {
+    width: 100%;
+  }
+
+  .table-form .btn {
+    width: 100%;
+    margin-top: 10px;
+  }
+
+  /* Ajustes para campos de pesquisa */
+  .table-search {
+    width: 100%;
+    margin-bottom: 15px;
+  }
+
+  .table-search .input-group {
+    width: 100%;
+  }
+
+  /* Ajustes para paginação */
+  .pagination {
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 5px;
+  }
+
+  .pagination .page-item {
+    margin: 0;
+  }
+
+  .pagination .page-link {
+    min-width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+/* Melhorias para ações em tabelas */
+@media (max-width: 768px) {
+  .table-actions {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .table-actions .btn {
+    width: 100%;
+    justify-content: flex-start;
+    padding: 12px;
+  }
+
+  .table-actions .btn i {
+    width: 20px;
+    text-align: center;
+    margin-right: 8px;
+  }
+
+  /* Dropdown em tabelas */
+  .table .dropdown-menu {
+    width: 200px;
+    position: fixed !important;
+    left: 50% !important;
+    transform: translateX(-50%) !important;
+    top: auto !important;
+    bottom: 10px;
+  }
+
+  .table .dropdown-item {
+    padding: 12px 15px;
+  }
+
+  /* Status badges em tabelas */
+  .table .badge {
+    width: 100%;
+    padding: 8px;
+    font-size: 12px;
+    text-align: center;
+  }
+}
+
+/* Responsividade do Dashboard e Calendário */
+@media (max-width: 768px) {
+  /* Ajustes do Calendário */
+  .calendar-container {
+    margin: 10px -15px;
+    padding: 10px;
+    border-radius: 0;
+  }
+
+  .calendar-grid {
+    grid-template-columns: repeat(7, minmax(40px, 1fr));
+    gap: 2px;
+  }
+
+  .calendar-day {
+    min-height: 60px;
+    padding: 2px;
+  }
+
+  .calendar-weekday {
+    padding: 5px;
+    font-size: 12px;
+  }
+
+  .calendar-event {
+    font-size: 10px;
+    padding: 2px 4px;
+    margin: 1px 0;
+  }
+
+  .calendar-day .day-number {
+    font-size: 12px;
+    top: 2px;
+    right: 2px;
+  }
+
+  .calendar-header {
+    padding: 10px;
+  }
+
+  .calendar-nav h2 {
+    font-size: 16px;
+  }
+
+  .calendar-nav button {
+    padding: 5px 10px;
+    font-size: 14px;
+  }
+
+  /* Ajustes das tabelas em todas as abas */
+  /* Serviços */
+  #servicos .table-responsive {
+    margin: 0 -15px;
+    padding: 0 15px;
+    overflow-x: auto;
+  }
+
+  #servicos .table {
+    min-width: 500px;
+  }
+
+  #servicos .btn-group {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  #servicos .btn-group .btn {
+    width: 100%;
+    margin: 2px 0;
+  }
+
+  /* Horários */
+  #horarios .table-responsive {
+    margin: 0 -15px;
+    padding: 0 15px;
+  }
+
+  #horarios .table {
+    min-width: 400px;
+  }
+
+  #horarios .form-inline {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  #horarios .form-inline .form-group {
+    margin: 5px 0;
+    width: 100%;
+  }
+
+  /* Atendentes */
+  #atendentes .table-responsive {
+    margin: 0 -15px;
+    padding: 0 15px;
+  }
+
+  #atendentes .table {
+    min-width: 500px;
+  }
+
+  #atendentes .btn-group {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  /* Configurações */
+  #configuracoes .table-responsive {
+    margin: 0 -15px;
+    padding: 0 15px;
+  }
+
+  #configuracoes .table {
+    min-width: 500px;
+  }
+
+  #configuracoes .form-group {
+    margin-bottom: 15px;
+  }
+
+  #configuracoes .card {
+    margin: 10px 0;
+  }
+
+  /* Ajustes gerais para formulários em todas as abas */
+  .form-row {
+    flex-direction: column;
+    margin: 0;
+  }
+
+  .form-row > [class*="col-"] {
+    padding: 0;
+    margin-bottom: 15px;
+  }
+
+  /* Ajustes para modais em todas as abas */
+  .modal-dialog {
+    margin: 10px;
+    width: auto;
+  }
+
+  .modal-body {
+    padding: 15px;
+  }
+
+  .modal-footer {
+    flex-direction: column;
+    padding: 15px;
+  }
+
+  .modal-footer .btn {
+    width: 100%;
+    margin: 5px 0;
+  }
+
+  /* Ajustes para cards de status/informação */
+  .status-card {
+    margin: 10px 0;
+  }
+
+  .info-card {
+    margin: 10px 0;
+  }
+
+  /* Melhorias na visualização de dados */
+  .data-display {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .data-display table {
+    min-width: 500px;
+  }
+
+  /* Ajustes para filtros e pesquisa */
+  .filter-section {
+    flex-direction: column;
+    margin: 10px 0;
+  }
+
+  .search-section {
+    width: 100%;
+    margin: 10px 0;
+  }
+
+  .filter-group {
+    width: 100%;
+    margin: 5px 0;
+  }
+
+  /* Ajustes para botões de ação */
+  .action-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    margin: 10px 0;
+  }
+
+  .action-buttons .btn {
+    width: 100%;
+  }
+}
+
+/* Melhorias específicas para tablets */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .calendar-grid {
+    grid-template-columns: repeat(7, 1fr);
+  }
+
+  .calendar-day {
+    min-height: 80px;
+  }
+
+  .table-responsive {
+    overflow-x: auto;
+  }
+
+  .btn-group {
+    flex-wrap: wrap;
+  }
+
+  .form-row {
+    margin: 0 -5px;
+  }
+
+  .form-row > [class*="col-"] {
+    padding: 0 5px;
+  }
+}
+
+/* Melhorias para scroll em abas com tabelas */
+@media (max-width: 768px) {
+  /* Container para tabelas com scroll */
+  .table-scroll-container {
+    position: relative;
+    margin: 0 -15px;
+    padding: 0 15px;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  /* Indicador de scroll */
+  .table-scroll-container::after {
+    content: "";
+    position: absolute;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    width: 5px;
+    background: linear-gradient(to left, rgba(0, 0, 0, 0.1), transparent);
+    pointer-events: none;
+  }
+
+  /* Ajustes específicos para cada aba */
+  #agendamentos .table-responsive,
+  #servicos .table-responsive,
+  #horarios .table-responsive,
+  #atendentes .table-responsive,
+  #usuarios .table-responsive,
+  #configuracoes .table-responsive {
+    max-height: calc(100vh - 250px);
+    overflow-y: auto;
+    margin-bottom: 20px;
+    border: 1px solid #e3e6f0;
+    border-radius: 8px;
+  }
+
+  /* Cabeçalho fixo nas tabelas */
+  .table-fixed-header {
+    position: sticky;
+    top: 0;
+    background: #fff;
+    z-index: 10;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  }
+
+  /* Estilização da barra de rolagem */
+  .table-responsive::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+
+  .table-responsive::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 4px;
+  }
+
+  .table-responsive::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 4px;
+  }
+
+  .table-responsive::-webkit-scrollbar-thumb:hover {
+    background: #666;
+  }
+
+  /* Ajustes para tabelas dentro dos containers */
+  .table-responsive table {
+    margin-bottom: 0;
+    min-width: 100%;
+  }
+
+  /* Indicador de scroll horizontal */
+  .table-has-scroll {
+    position: relative;
+  }
+
+  .table-has-scroll::after {
+    content: "⟷";
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 30px;
+    height: 30px;
+    background: var(--primary-color);
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 16px;
+    animation: scroll-hint 1.5s infinite;
+    z-index: 100;
+  }
+
+  @keyframes scroll-hint {
+    0% {
+      transform: translateX(-5px);
+    }
+    50% {
+      transform: translateX(5px);
+    }
+    100% {
+      transform: translateX(-5px);
+    }
+  }
+
+  /* Ajuste para células da tabela */
+  .table td,
+  .table th {
+    white-space: nowrap;
+    padding: 12px 15px;
+    vertical-align: middle;
+  }
+
+  /* Melhoria na visualização de ações */
+  .table .action-column {
+    position: sticky;
+    right: 0;
+    background: #fff;
+    box-shadow: -2px 0 5px rgba(0, 0, 0, 0.05);
+  }
+}
+
+/* Ajustes para botões em tabelas no mobile */
+@media (max-width: 768px) {
+  /* Estilo comum para botões em tabelas */
+  .table .btn-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    width: 100%;
+  }
+
+  .table .btn-group .btn {
+    width: 100%;
+    margin: 0;
+    padding: 8px 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+  }
+
+  /* Ajustes específicos para aba Usuários e Configurações */
+  #usuarios .btn-group .btn,
+  #configuracoes .btn-group .btn {
+    font-size: 14px;
+    min-height: 38px;
+  }
+
+  #usuarios .btn-group .btn i,
+  #configuracoes .btn-group .btn i {
+    font-size: 14px;
+    width: 16px;
+    text-align: center;
+  }
+
+  /* Espaçamento entre botões */
+  #usuarios .btn-group .btn-danger,
+  #configuracoes .btn-group .btn-danger {
+    margin-bottom: 4px;
+  }
+
+  /* Melhor visualização em células de tabela */
+  #usuarios td,
+  #configuracoes td {
+    padding: 12px 8px;
+  }
+
+  /* Ajuste para células com botões */
+  #usuarios td:last-child,
+  #configuracoes td:last-child {
+    min-width: 120px;
+    padding: 8px;
+  }
+
+  /* Tooltip ajustes */
+  #usuarios .tooltip-container,
+  #configuracoes .tooltip-container {
+    width: 100%;
+  }
+
+  #usuarios .tooltip-container .btn,
+  #configuracoes .tooltip-container .btn {
+    width: 100%;
+  }
+}
+
+/* Ajustes específicos para botões na aba Atendentes */
+@media (max-width: 768px) {
+  #atendentes .btn-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    width: 100%;
+  }
+
+  #atendentes .btn-group .btn {
+    width: 100%;
+    margin: 0;
+    padding: 8px 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    font-size: 14px;
+    min-height: 38px;
+  }
+
+  #atendentes .btn-group .btn i {
+    font-size: 14px;
+    width: 16px;
+    text-align: center;
+  }
+
+  #atendentes .btn-group .btn-danger {
+    margin-bottom: 4px;
+  }
+
+  #atendentes td {
+    padding: 12px 8px;
+  }
+
+  #atendentes td:last-child {
+    min-width: 120px;
+    padding: 8px;
+  }
+
+  #atendentes .tooltip-container {
+    width: 100%;
+  }
+
+  #atendentes .tooltip-container .btn {
+    width: 100%;
+  }
+
+  /* Melhorias na visualização do status */
+  #atendentes td:nth-child(3) {
+    font-weight: 500;
+  }
+
+  /* Ajuste para o botão de disponibilidade */
+  #atendentes .disponibilidade-btn {
+    background-color: var(--primary-color);
+    color: white;
+  }
+
+  #atendentes .disponibilidade-btn:hover {
+    background-color: var(--primary-color-dark);
+  }
+
+  /* Melhor visualização em telas pequenas */
+  #atendentes .table td {
+    white-space: normal;
+    min-width: auto;
+  }
+
+  #atendentes .table td:first-child {
+    font-weight: 500;
+  }
+}
+
+/* Ajustes específicos para botões na aba Horários */
+@media (max-width: 768px) {
+  #horarios .btn-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    width: 100%;
+  }
+
+  #horarios .btn-group .btn {
+    width: 100%;
+    margin: 0;
+    padding: 8px 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    font-size: 14px;
+    min-height: 38px;
+  }
+
+  #horarios .btn-group .btn i {
+    font-size: 14px;
+    width: 16px;
+    text-align: center;
+  }
+
+  /* Espaçamento entre botões */
+  #horarios .btn-group .btn-danger {
+    margin-bottom: 4px;
+  }
+
+  /* Ajustes para células */
+  #horarios td {
+    padding: 12px 8px;
+  }
+
+  #horarios td:last-child {
+    min-width: 120px;
+    padding: 8px;
+  }
+
+  /* Tooltip ajustes */
+  #horarios .tooltip-container {
+    width: 100%;
+  }
+
+  #horarios .tooltip-container .btn {
+    width: 100%;
+  }
+
+  /* Melhorias na visualização do horário */
+  #horarios td:first-child {
+    font-weight: 500;
+    font-size: 16px;
+  }
+
+  /* Status de disponibilidade */
+  #horarios td:nth-child(2) {
+    font-weight: 500;
+    color: var(--primary-color);
+  }
+
+  /* Ajuste para o botão de disponibilidade */
+  #horarios .disponibilidade-btn {
+    background-color: var(--primary-color);
+    color: white;
+  }
+
+  #horarios .disponibilidade-btn:hover {
+    background-color: var(--primary-color-dark);
+  }
+
+  /* Ajustes para formulários */
+  #horarios form {
+    margin-bottom: 20px;
+  }
+
+  #horarios .form-group {
+    margin-bottom: 15px;
+  }
+
+  #horarios .form-control {
+    height: 45px;
+  }
+
+  /* Ajustes para tabela de horários atribuídos */
+  #horarios .horarios-atribuidos {
+    margin-top: 20px;
+  }
+
+  #horarios .horarios-atribuidos th {
+    white-space: nowrap;
+  }
+}
+
+/* Ajustes específicos para botões na aba Serviços */
+@media (max-width: 768px) {
+  #servicos .btn-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    width: 100%;
+  }
+
+  #servicos .btn-group .btn {
+    width: 100%;
+    margin: 0;
+    padding: 8px 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    font-size: 14px;
+    min-height: 38px;
+  }
+
+  #servicos .btn-group .btn i {
+    font-size: 14px;
+    width: 16px;
+    text-align: center;
+  }
+
+  #servicos .btn-group .btn-danger {
+    margin-bottom: 4px;
+  }
+
+  #servicos td {
+    padding: 12px 8px;
+  }
+
+  #servicos td:last-child {
+    min-width: 120px;
+    padding: 8px;
+  }
+
+  #servicos .tooltip-container {
+    width: 100%;
+  }
+
+  #servicos .tooltip-container .btn {
+    width: 100%;
+  }
+
+  /* Melhorias na visualização dos valores */
+  #servicos td:nth-child(2) {
+    font-weight: 500;
+    color: var(--primary-color);
+  }
+
+  /* Status de disponibilidade */
+  #servicos td:nth-child(4) {
+    font-weight: 500;
+  }
+
+  /* Ajuste para o botão de disponibilidade */
+  #servicos .disponibilidade-btn {
+    background-color: var(--primary-color);
+    color: white;
+  }
+
+  #servicos .disponibilidade-btn:hover {
+    background-color: var(--primary-color-dark);
+  }
+
+  /* Melhor visualização em telas pequenas */
+  #servicos .table td {
+    white-space: normal;
+    min-width: auto;
+  }
+
+  #servicos .table td:first-child {
+    font-weight: 500;
+  }
+}
+
+/* Ajustes espec��ficos para botões em Serviços Atribuídos */
+@media (max-width: 768px) {
+  #servicos .servicos-atribuidos .btn-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    width: 100%;
+  }
+
+  #servicos .servicos-atribuidos .btn-group .btn {
+    width: 100%;
+    margin: 0;
+    padding: 8px 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    font-size: 14px;
+    min-height: 38px;
+  }
+
+  #servicos .servicos-atribuidos .btn-group .btn i {
+    font-size: 14px;
+    width: 16px;
+    text-align: center;
+  }
+
+  #servicos .servicos-atribuidos .btn-group .btn-danger {
+    margin-bottom: 4px;
+  }
+
+  #servicos .servicos-atribuidos td {
+    padding: 12px 8px;
+  }
+
+  #servicos .servicos-atribuidos td:last-child {
+    min-width: 120px;
+    padding: 8px;
+  }
+
+  #servicos .servicos-atribuidos .tooltip-container {
+    width: 100%;
+  }
+
+  #servicos .servicos-atribuidos .tooltip-container .btn {
+    width: 100%;
+  }
+
+  /* Melhorias na visualização dos dados */
+  #servicos .servicos-atribuidos td:first-child,
+  #servicos .servicos-atribuidos td:nth-child(2) {
+    font-weight: 500;
+  }
+
+  /* Melhor visualização em telas pequenas */
+  #servicos .servicos-atribuidos .table td {
+    white-space: normal;
+    min-width: auto;
+  }
+}
+
+/* Ajustes para logo responsiva */
+@media (max-width: 768px) {
+  .sidebar .logo {
+    max-width: 100%;
+    height: auto;
+    padding: 10px;
+    margin: 0 auto;
+    display: block;
+  }
+
+  /* Ajuste específico para logo do dashboard */
+  img[src*="dashboard_logo_url"] {
+    max-width: 100%;
+    height: auto !important; /* Sobrescreve altura fixa */
+    object-fit: contain;
+    margin: 10px auto;
+    display: block;
+  }
+
+  /* Container da logo */
+  .logo-container {
+    width: 100%;
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  /* Ajustes para diferentes tamanhos de tela */
+  @media (max-width: 480px) {
+    .sidebar .logo {
+      max-width: 80%;
+    }
+  }
+
+  @media (max-width: 320px) {
+    .sidebar .logo {
+      max-width: 70%;
+    }
+  }
+}
+
+/* Melhorias gerais para imagens responsivas */
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Ajuste para manter proporção da imagem */
+.img-fluid {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+/* Ajustes para scroll no calendário em dispositivos móveis */
+@media (max-width: 768px) {
+  /* Container do calendário com scroll */
+  .calendar-container {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    padding-bottom: 15px; /* Espaço para a barra de scroll */
+    margin-bottom: 20px;
+  }
+
+  /* Largura mínima para garantir que todo o conteúdo seja visível */
+  .calendar-grid {
+    min-width: 700px; /* Garante que todos os dias fiquem visíveis */
+    width: max-content;
+  }
+
+  /* Estilização da barra de scroll */
+  .calendar-container::-webkit-scrollbar {
+    height: 8px;
+  }
+
+  .calendar-container::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 4px;
+  }
+
+  .calendar-container::-webkit-scrollbar-thumb {
+    background: var(--primary-color);
+    border-radius: 4px;
+  }
+
+  .calendar-container::-webkit-scrollbar-thumb:hover {
+    background: var(--primary-color-dark);
+  }
+
+  /* Indicador de scroll */
+  .calendar-container::after {
+    content: "";
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    width: 50px;
+    height: calc(100% - 20px); /* Altura total menos o padding */
+    background: linear-gradient(to right, transparent, rgba(0, 0, 0, 0.05));
+    pointer-events: none;
+  }
+
+  /* Ajustes para melhor visualização em telas pequenas */
+  .calendar-event {
+    margin: 2px 0;
+    padding: 4px 6px;
+  }
+
+  .calendar-header {
+    position: sticky;
+    left: 0;
+    background: #fff;
+    z-index: 1;
+  }
+}

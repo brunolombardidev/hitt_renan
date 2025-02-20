@@ -1,0 +1,100 @@
+/* Dashboard Cards - New Specific Styles */
+.dashboard-stats {
+  display: flex;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  margin: 20px 0;
+  gap: 20px;
+}
+
+.dashboard-stats .col-md-3 {
+  flex: 0 0 calc(33.333% - 14px);
+  max-width: calc(33.333% - 14px);
+}
+
+.dashboard-stats .dashboard-card {
+  border-radius: 10px;
+  border: none;
+  transition: transform 0.3s ease;
+  height: 140px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
+  overflow: visible;
+}
+
+.dashboard-stats .dashboard-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.dashboard-stats .dashboard-card .card-body {
+  padding: 1.5rem;
+  text-align: center;
+  color: white;
+  z-index: 2;
+}
+
+.dashboard-stats .dashboard-card .card-title {
+  font-size: 0.9rem;
+  font-weight: 500;
+  margin-bottom: 0.5rem;
+  text-transform: none;
+  letter-spacing: 0;
+  opacity: 0.8;
+}
+
+.dashboard-stats .dashboard-card .card-number {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 0.3rem;
+  line-height: 1;
+}
+
+.dashboard-stats .dashboard-card .card-text {
+  font-size: 0.8rem;
+  opacity: 0.7;
+  font-weight: 400;
+}
+
+/* Card specific gradients with improved contrast */
+.dashboard-stats .agendamentos-card {
+  background: linear-gradient(135deg, #4e54c8 0%, #8f94fb 100%);
+}
+
+.dashboard-stats .finalizados-card {
+  background: linear-gradient(135deg, #11998e 0%, #38ef7d 100%);
+}
+
+.dashboard-stats .atendentes-card {
+  background: linear-gradient(135deg, #ff758c 0%, #ff7eb3 100%);
+}
+
+.dashboard-stats .servicos-card {
+  background: linear-gradient(135deg, #fc466b 0%, #3f5efb 100%);
+}
+
+/* Novos cards */
+.dashboard-stats .total-valor-card {
+  background: linear-gradient(45deg, #00c6fb 0%, #005bea 100%);
+}
+
+.dashboard-stats .total-minutos-card {
+  background: linear-gradient(45deg, #f5576c 0%, #f093fb 100%);
+}
+
+/* Adiciona media queries para responsividade */
+@media (max-width: 1200px) {
+  .dashboard-stats .col-md-3 {
+    flex: 0 0 calc(50% - 10px);
+    max-width: calc(50% - 10px);
+  }
+}
+
+@media (max-width: 768px) {
+  .dashboard-stats .col-md-3 {
+    flex: 0 0 100%;
+    max-width: 100%;
+  }
+}

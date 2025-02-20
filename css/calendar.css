@@ -1,0 +1,134 @@
+.calendar-container {
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  margin: 20px 0;
+}
+
+.calendar-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.calendar-nav {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.calendar-nav button {
+  background: var(--primary-color);
+  color: white;
+  border: none;
+  padding: 8px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.calendar-nav button:hover {
+  opacity: 0.9;
+}
+
+.calendar-nav h2 {
+  margin: 0;
+  font-size: 1.2rem;
+  padding: 0 15px;
+}
+
+.calendar-grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 5px;
+}
+
+.calendar-weekday {
+  text-align: center;
+  font-weight: bold;
+  padding: 10px;
+  background: #f8f9fc;
+  border-radius: 5px;
+}
+
+.calendar-day {
+  min-height: 100px;
+  padding: 5px;
+  border: 1px solid #e3e6f0;
+  border-radius: 5px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+.calendar-day .day-number {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  font-size: 0.9rem;
+  color: #858796;
+}
+
+.calendar-day.other-month {
+  background: #f8f9fc;
+  opacity: 0.5;
+}
+
+.calendar-day.today {
+  background: #e8f4ff;
+}
+
+.calendar-events-container {
+  margin-top: 25px;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  overflow-y: auto;
+  max-height: calc(100% - 25px);
+}
+
+.calendar-event {
+  margin: 1px 0;
+  padding: 3px 6px;
+  border-radius: 3px;
+  font-size: 0.75rem;
+  color: #fff;
+  cursor: pointer;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  transition: all 0.2s ease;
+}
+
+.calendar-event:hover {
+  transform: scale(1.02);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.calendar-event-tooltip {
+  position: fixed;
+  background: #fff;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  padding: 10px;
+  z-index: 1000;
+  min-width: 200px;
+  display: none;
+  border: 1px solid #e3e6f0;
+}
+
+@media (max-width: 768px) {
+  .calendar-grid {
+    font-size: 12px;
+  }
+
+  .calendar-day {
+    min-height: 80px;
+  }
+
+  .calendar-event {
+    font-size: 10px;
+  }
+}
